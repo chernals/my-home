@@ -1,0 +1,22 @@
+[user]
+	name = Cédric Hernalsteens
+	email = cedric.hernalsteens@iba-group.com
+	signingkey = E0840016A4876AECAF5987E8A24792466048FCAB
+[filter "lfs"]
+	required = true
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	clean = git-lfs clean -- %f
+[core]
+	autocrlf = input
+	excludesfile = /Users/chernals/.gitignore_global
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
