@@ -1,0 +1,5 @@
+use_pip: True
+channels:
+  - intel
+  - conda-forge
+  - defaults
