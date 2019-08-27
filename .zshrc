@@ -24,6 +24,9 @@ alias reps='cd ~/reps'
 alias jn='ca base && jupyter notebook'
 alias gitsh="perl -nE 'BEGIN {print \"git > \"} system \"git $_\"; print \"git > \"'"
 
+# GPG
+export GPG_TTY=`tty`
+
 # Homebrew
 # Set DYLD_LIBRARY_PATH due to imcompatibility with Homebrew symlinks
 fpath=("/usr/local/bin/" $fpath)
@@ -32,18 +35,16 @@ DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resour
 # Python
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Geant4
-# Runs a modified Geant4 source script
-source ~/.geant4
+pushd /usr/local/bin >/dev/null; . ./geant4.sh; popd >/dev/null
 
 # Root
 pushd /usr/local >/dev/null; . bin/thisroot.sh; popd >/dev/null
 
 # BDSim
-export BDSIM=/usr/local
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$BDSIM/lib
-export ROOT_INCLUDE_PATH=$BDSIM/include/bdsim/:$BDSIM/include/bdsim/analysis/:$ROOT_INCLUDE_PATH
+pushd /usr/local >/dev/null; . bin/bdsim.sh; popd >/dev/null
 
 # Conda
 fpath+=/Users/chernals/reps/conda-zsh-completion
@@ -57,3 +58,6 @@ function ca () {
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Environment variables
+export EDTITOR=vi
+export VISUAL=atom
