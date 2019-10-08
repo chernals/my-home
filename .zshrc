@@ -32,6 +32,9 @@ export GPG_TTY=`tty`
 fpath=("/usr/local/bin/" $fpath)
 DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/
 
+# Bison
+export PATH=/usr/local/opt/bison/bin:$PATH
+
 # Python
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -59,5 +62,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Environment variables
+export GIT_EDITOR=vi
 export EDTITOR=vi
-export VISUAL=atom
+export VISUAL=vi
+
+# Functions
+function channel {
+	cd /Users/chernals/Université\ Libre\ de\ Bruxelles/Metronu\ -\ AP\ -\ Documents/;
+	cd $1;
+}
