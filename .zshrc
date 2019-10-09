@@ -21,16 +21,16 @@ alias iba='cd /Users/chernals/OneDrive\ -\ Université\ Libre\ de\ Bruxelles/iba
 alias ulb='cd /Users/chernals/OneDrive\ -\ Université\ Libre\ de\ Bruxelles/ulbbox'
 alias mebox='cd /Users/chernals/OneDrive\ -\ Université\ Libre\ de\ Bruxelles/me'
 alias reps='cd ~/reps'
-alias jn='ca base && jupyter notebook'
+alias jlab='ca py37 && ulimit -n 4096 && jupyter lab'
 alias gitsh="perl -nE 'BEGIN {print \"git > \"} system \"git $_\"; print \"git > \"'"
 
 # GPG
 export GPG_TTY=`tty`
 
 # Homebrew
-# Set DYLD_LIBRARY_PATH due to imcompatibility with Homebrew symlinks
 fpath=("/usr/local/bin/" $fpath)
-DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/
+# Set DYLD_LIBRARY_PATH due to imcompatibility with Homebrew symlinks
+#DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/
 
 # Bison
 export PATH=/usr/local/opt/bison/bin:$PATH
@@ -63,6 +63,7 @@ export LANG=en_US.UTF-8
 
 # Environment variables
 export GIT_EDITOR=vi
+export HOMEBREW_EDITOR=vi
 export EDTITOR=vi
 export VISUAL=vi
 
