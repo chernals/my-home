@@ -30,7 +30,7 @@ export GPG_TTY=`tty`
 # Homebrew
 fpath=("/usr/local/bin/" $fpath)
 # Set DYLD_LIBRARY_PATH due to imcompatibility with Homebrew symlinks
-#DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/
+DYLD_LIBRARY_PATH=/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/
 
 # Bison
 export PATH=/usr/local/opt/bison/bin:$PATH
@@ -39,6 +39,10 @@ export PATH=/usr/local/opt/bison/bin:$PATH
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# Ruby
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # Geant4
 pushd /usr/local/bin >/dev/null; . ./geant4.sh; popd >/dev/null

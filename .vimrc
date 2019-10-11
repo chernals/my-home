@@ -33,6 +33,8 @@ map Q gq
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+  " For MAD-X
+  au BufNewFile,BufRead *.madx,*.seq,*.str,*.mask setf madx
 endif
 
 " Only do this part when compiled with support for autocommands.
